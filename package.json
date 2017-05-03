@@ -1,0 +1,33 @@
+{
+  "name": "number-of-search-results",
+  "version": "0.2.0",
+  "license": "MIT",
+  "description": "Small module for retrieving number of search results for a given query from different search engines.",
+  "dependencies": {
+    "exp-config": "^1.3.1",
+    "iterm-title": "^1.0.0",
+    "log": "^1.4.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0",
+    "sanitize-html": "^1.14.1",
+    "sleep": "^5.1.1",
+    "vo": "^4.0.2"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "coffee-script": "^1.10.0",
+    "eslint": "^2.13.1",
+    "mocha": "^2.5.3",
+    "mocha-cakes-2": "^1.1.1",
+    "nock": "^9.0.13"
+  },
+  "repository": "",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha && eslint . --cache",
+    "revision": "which git && [[ -d .git ]] && git rev-parse HEAD > config/_revision || true",
+    "ci": "npm install && npm prune && npm ls && npm test"
+  }
+}

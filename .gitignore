@@ -1,0 +1,20 @@
+# Dependency directory and npm log
+node_modules
+
+npm-debug.log
+
+# Project files
+.tern-port
+.tern-project
+.idea
+*.iml
+typings
+
+# OS X
+.DS_Store
+
+# The .env file is developer local and should never be checked in
+.env
+
+.vscode/
+.eslintcache
