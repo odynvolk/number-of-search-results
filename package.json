@@ -4,14 +4,10 @@
   "license": "MIT",
   "description": "Small module for retrieving number of search results for a given query from different search engines.",
   "dependencies": {
-    "exp-config": "^1.3.1",
-    "iterm-title": "^1.0.0",
-    "log": "^1.4.0",
+    "cheerio": "^0.22.0",
     "request": "^2.81.0",
     "request-promise": "^4.2.0",
-    "sanitize-html": "^1.14.1",
-    "sleep": "^5.1.1",
-    "vo": "^4.0.2"
+    "sanitize-html": "^1.14.1"
   },
   "devDependencies": {
     "assert": "^1.4.1",

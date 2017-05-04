@@ -5,7 +5,6 @@ const cheerio = require("cheerio");
 const rp = require("request-promise");
 const sanitizeHtml = require("sanitize-html");
 
-const logger = require("./lib/logger");
 const resultParser = require("./lib/resultParser");
 
 const numSearchResults = {};
@@ -27,7 +26,28 @@ numSearchResults.bing = function (query, proxy) {
       }));
 
       const numberOfResults = resultParser($(".sb_count").html());
-      logger.debug(`Bing: ${query} had ${numberOfResults} results`);
+
+      return numberOfResults;
+    });
+};
+
+numSearchResults.google = function (query, proxy) {
+  const opts = {
+    url: `https://www.google.com/search?q=${encodeURIComponent(query)}`,
+    headers: {
+      "User-Agent": randomUserAgent()
+    }
+  };
+  if (proxy) opts.proxy = proxy;
+
+  return rp.get(opts)
+    .then((data) => {
+      const $ = cheerio.load(sanitizeHtml(data, {
+        allowedTags: false,
+        allowedAttributes: false
+      }));
+
+      const numberOfResults = resultParser($("#resultStats").html());
 
       return numberOfResults;
     });
