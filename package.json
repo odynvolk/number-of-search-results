@@ -1,6 +1,6 @@
 {
   "name": "number-of-search-results",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "Small module for retrieving number of search results for a given query from different search engines.",
   "dependencies": {
