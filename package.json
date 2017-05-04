@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "description": "Small module for retrieving number of search results for a given query from different search engines.",
+  "author": "Alexi Rahman",
   "dependencies": {
     "cheerio": "^0.22.0",
     "request": "^2.81.0",
@@ -19,11 +20,16 @@
     "mocha-cakes-2": "^1.1.1",
     "nock": "^9.0.13"
   },
-  "repository": "",
+  "repository": "odynvolk/number-of-search-results",
   "scripts": {
     "start": "node app.js",
     "test": "mocha && eslint . --cache",
     "revision": "which git && [[ -d .git ]] && git rev-parse HEAD > config/_revision || true",
     "ci": "npm install && npm prune && npm ls && npm test"
-  }
+  },
+  "files": [
+    "lib",
+    "index.js"
+  ],
+  "main": "index.js"
 }
