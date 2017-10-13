@@ -18,3 +18,5 @@ typings
 
 .vscode/
 .eslintcache
+
+test.js
