@@ -20,7 +20,10 @@
     "mocha-cakes-2": "^1.1.1",
     "nock": "^9.0.13"
   },
-  "repository": "davicente/number-of-search-results",
+  "repository":   {
+    "type": "git",
+    "url": "https://github.com/odynvolk/number-of-search-results.git"
+  },
   "scripts": {
     "start": "node app.js",
     "test": "mocha && eslint . --cache",
