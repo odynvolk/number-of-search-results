@@ -1,9 +1,9 @@
 {
-  "name": "number-of-search-results",
-  "version": "1.0.0",
+  "name": "number-search-results",
+  "version": "1.0.2",
   "license": "MIT",
   "description": "Small module for retrieving number of search results for a given query from different search engines.",
-  "author": "Alexi Rahman",
+  "contributors": ["Alexi Rahman", "David Vicente"],
   "dependencies": {
     "cheerio": "^0.22.0",
     "request": "^2.81.0",

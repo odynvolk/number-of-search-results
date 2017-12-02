@@ -12,6 +12,8 @@ const bingJibberish = fs.readFileSync("./test/data/bing-fdvdghgfhfghfghfghfd.htm
 const googleJavascript = fs.readFileSync("./test/data/google-javascript.html", "utf8");
 const googleJibberish = fs.readFileSync("./test/data/google-fdvdghgfhfghfghfghfd.html", "utf8");
 
+const spanishGoogleJavascript = fs.readFileSync("./test/data/spanish-google-javascript.html", "utf8");
+
 describe("number of search results", () => {
   describe("Bing", () => {
     it("should return found links for query from Bing", (done) => {
@@ -56,6 +58,21 @@ describe("number of search results", () => {
       numSearchResults.google(query).then((response) => {
           expect(response).to.exist;
           expect(response).to.be.above(1900000000);
+
+          done();
+        });
+    });
+
+    it("should return found links for query from spanish Google", (done) => {
+      const query = "javascript";
+
+      nock("https://www.google.com")
+        .get(`/search?q=${encodeURIComponent(query)}`)
+        .reply(200, spanishGoogleJavascript);
+
+      numSearchResults.google(query).then((response) => {
+          expect(response).to.exist;
+          expect(response).to.be.above(1000000);
 
           done();
         });
