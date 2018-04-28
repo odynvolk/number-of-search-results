@@ -15,6 +15,11 @@ describe("result parser", () => {
     expect(results).to.be.equal(32300000);
   });
 
+  it("should parse correct number of results with large number", () => {
+    const results = resultParser("About 37&#xFFFD;300&#xFFFD;000 results");
+    expect(results).to.be.equal(37300000);
+  });
+
   it("should parse correct number of results with few results", () => {
     const results = resultParser("9 results<nobr> (0,56 seconds)&nbsp;</nobr>");
     expect(results).to.be.equal(9);

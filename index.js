@@ -13,7 +13,9 @@ numSearchResults.bing = function (query, proxy) {
   const opts = {
     url: `https://www.bing.com/search?q=${encodeURIComponent(query)}`,
     headers: {
-      "User-Agent": randomUserAgent()
+      "User-Agent": randomUserAgent(),
+      "accept-language": "en-US,en;q=0.9,sv;q=0.8,ru;q=0.7,fr;q=0.6,de;q=0.5,ja;q=0.4,zh-CN;q=0.3,zh;q=0.2,pl;q=0.1,it;q=0.1,da;q=0.1",
+      "referer": "https://www.bing.com/"
     }
   };
   if (proxy) opts.proxy = proxy;
@@ -35,7 +37,9 @@ numSearchResults.google = function (query, proxy) {
   const opts = {
     url: `https://www.google.com/search?q=${encodeURIComponent(query)}`,
     headers: {
-      "User-Agent": randomUserAgent()
+      "User-Agent": randomUserAgent(),
+      "accept-language": "en-US,en;q=0.9,sv;q=0.8,ru;q=0.7,fr;q=0.6,de;q=0.5,ja;q=0.4,zh-CN;q=0.3,zh;q=0.2,pl;q=0.1,it;q=0.1,da;q=0.1",
+      "referer": "https://www.google.com/"
     }
   };
   if (proxy) opts.proxy = proxy;
